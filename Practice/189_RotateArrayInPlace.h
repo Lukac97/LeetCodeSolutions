@@ -19,35 +19,43 @@ vector<int> rotateArrayWithCopy(const vector<int>& vec, int step)
 
 }
 
+void changeValsAndAssignTemp(vector<int>& vec, unordered_set<int>& changedIdxs, const int& idx, int& temp)
+{
+    int tempTemp = vec[idx];
+    vec[idx] = temp;
+    temp = tempTemp;
+
+    changedIdxs.insert(idx);
+}
+
 void rotateArrayInPlace(vector<int>& vec, int step)
 {
-    int currentIdx = 0;
+    if (step == 0 || step % vec.size() == 0 || vec.size() <= 1)
+        return;
 
+    unordered_set<int> changedIdxs;
     int i = 0;
 
-    bool repetitive = (vec.size() % step == 0) && (step % 2 == 0);
+    int temp = vec[i];
+    i = (i + step) % vec.size();
+    //changeValsAndAssignTemp(vec, changedIdxs, i, temp);
 
-    int temp;
+    //changedIdxs.insert(i);
 
-    while (i < vec.size())
+    while (changedIdxs.size() < vec.size())
     {
-        if (repetitive && i == vec.size() / 2)
+        if (changedIdxs.find(i) != changedIdxs.end())
         {
-            currentIdx++;
-        }
-
-        if (i == 0)
-        {
+            if (changedIdxs.size() != 0)
+                i++;
             temp = vec[i];
+            i = (i + step) % vec.size();
         }
         else
         {
-            int tempTemp = vec[i];
-            vec[i] = temp;
-            temp = tempTemp;
-        }
-        i++;
-    }
+            changeValsAndAssignTemp(vec, changedIdxs, i, temp);
 
-    vec[0] = temp;
+            i = (i + step) % vec.size();
+        }
+    }
 }

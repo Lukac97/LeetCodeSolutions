@@ -38,9 +38,6 @@ void rotateArrayInPlace(vector<int>& vec, int step)
 
     int temp = vec[i];
     i = (i + step) % vec.size();
-    //changeValsAndAssignTemp(vec, changedIdxs, i, temp);
-
-    //changedIdxs.insert(i);
 
     while (changedIdxs.size() < vec.size())
     {

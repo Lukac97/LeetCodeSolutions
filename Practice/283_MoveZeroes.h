@@ -13,7 +13,7 @@ void moveZerosToEnd(vector<int>& vec)
                 firstZeroIdx = i;
             }
         }
-        else
+        else if (firstZeroIdx >= 0)
         {
             int temp = vec[firstZeroIdx];
             vec[firstZeroIdx] = vec[i];

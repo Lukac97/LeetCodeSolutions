@@ -154,6 +154,7 @@
     <ClInclude Include="1_TwoSum.h" />
     <ClInclude Include="217_ContainsDuplicate.h" />
     <ClInclude Include="283_MoveZeroes.h" />
+    <ClInclude Include="2_AddTwoNumbers.h" />
     <ClInclude Include="3_LongestSubstringWithoutRepeatingCharacters.h" />
     <ClInclude Include="53_MaximumSubarray.h" />
     <ClInclude Include="Includes.h" />

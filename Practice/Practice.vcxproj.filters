@@ -64,5 +64,8 @@
     <ClInclude Include="2_AddTwoNumbers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="4_MedianOfTwoSortedArrays.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
